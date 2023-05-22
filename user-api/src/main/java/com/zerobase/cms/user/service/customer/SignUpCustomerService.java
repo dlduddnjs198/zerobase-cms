@@ -1,4 +1,4 @@
-package com.zerobase.cms.user.service;
+package com.zerobase.cms.user.service.customer;
 
 import com.zerobase.cms.user.domain.SignUpForm;
 import com.zerobase.cms.user.domain.model.Customer;
@@ -35,7 +35,7 @@ public class SignUpCustomerService {
                 .orElseThrow(() -> new CustomException(NOT_FOUND_USER));
         if(customer.isVerify()){
             throw new CustomException(ALREADY_VERIFY);
-        } else if(customer.getVerificationCode().equals(code)){
+        } else if(!customer.getVerificationCode().equals(code)){
             throw new CustomException(WRONG_VERIFICATION);
         } else if(customer.getVerifyExpiredAt().isBefore(LocalDateTime.now())){
             throw new CustomException(EXPIRE_CODE);
