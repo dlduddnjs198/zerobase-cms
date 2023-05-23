@@ -1,0 +1,43 @@
+### 회원가입 ( 고객 )
+POST http://localhost:8081/signup/customer
+Content-Type: application/json
+
+{
+  "birth": "1998-04-24",
+  "email": "dlduddnjs1989@naver.com",
+  "name": "myName",
+  "password": "pw",
+  "phone": "01000000000"
+}
+### 이메일 인증 ( 고객 )
+GET http://localhost:8081/signup/customer/verify?email=dlduddnjs1989@naver.com&code=hc$gir12
+
+### 로그인 ( 고객 )
+POST http://localhost:8081/signin/customer
+Content-Type: application/json
+
+{
+  "email": "dlduddnjs1989@naver.com",
+  "password": "pw"
+}
+
+### 회원 정보 고객 ( 고객 )
+POST http://localhost:8081/customer/getInfo
+Content-Type: application/json
+X-AUTH-TOKEN: blablablfkjelf
+
+### 잔액 변경 ( 고객 )
+POST http://localhost:8081/customer/balance
+Content-Type: application/json
+X-AUTH-TOKEN: blablablfkjelf
+
+{
+  "from": "server",
+  "message": "돈 충전",
+  "money": 50000
+}
+#################################
+
+### 회원가입 ( 셀러 )
+
+### 로그인 ( 셀러 )
