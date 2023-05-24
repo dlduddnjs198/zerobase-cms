@@ -107,5 +107,13 @@ X-AUTH-TOKEN: blablablfkjelf
   "name": "나이키 에어포스"
 }
 
+### 상품 검색
+GET http://localhost:8082/search/product?name=나이키
+Content-Type: application/json
+
+### 상품 디테일 검색
+GET http://localhost:8082/search/product/detail?productId=1
+Content-Type: application/json
+
 ### 이메일 인증 ( 고객 )
 GET http://localhost:8081/signup/seller/verify?email=dlduddnjs1989@naver.com&code=hc$gir12
