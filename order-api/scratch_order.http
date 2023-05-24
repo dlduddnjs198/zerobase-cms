@@ -33,5 +33,42 @@ X-AUTH-TOKEN: blablablfkjelf
   "name": "나이키 에어포스"
 }
 
+### 상품 수정
+PUT http://localhost:8082/seller/product
+Content-Type: application/json
+X-AUTH-TOKEN: blablablfkjelf
+
+{
+  "description": "상품 설명",
+  "items": [
+    {
+      "id": 1,
+      "count": 1,
+      "name": "상품의 아이덴티티2",
+      "price": 10000
+    }
+  ],
+  "id": 1,
+  "name": "나이키 에어포스 한정판"
+}
+
+### 상품 아이템 수정
+PUT http://localhost:8082/seller/product/item
+Content-Type: application/json
+X-AUTH-TOKEN: blablablfkjelf
+
+{
+  "description": "상품 설명",
+  "items": [
+    {
+      "id": 1,
+      "count": 1,
+      "name": "상품의 아이덴티티2",
+      "price": 10000
+    }
+  ],
+  "name": "나이키 에어포스"
+}
+
 ### 이메일 인증 ( 고객 )
 GET http://localhost:8081/signup/seller/verify?email=dlduddnjs1989@naver.com&code=hc$gir12
