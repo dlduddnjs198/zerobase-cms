@@ -38,6 +38,20 @@ public class CartApplication {
         return cartService.addCart(customerId, form);
     }
 
+    /**
+     * 엣지 케이스
+     * 카트에 대한 상품을 업데이트했는데 문제가 있을 경우
+     * @param customerId
+     * @param cart
+     * @return
+     */
+    public Cart updateCart(Long customerId, Cart cart){
+        // 실질적으로 변하는 데이터
+        // 상품의 삭제, 수량 변경
+        cartService.putCart(customerId, cart);
+        return getCart(customerId);
+    }
+
     // 1. 장바구니에 상품을 추가했다.
     // 2. 상품의 가격이나 수량이 변동된다.(알림을 받아야함)
     public Cart getCart(Long customerId){
